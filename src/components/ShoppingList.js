@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Item from "./Item";
 
-function ShoppingList({ items }) {
+function ShoppingList({ itemsOne }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   function handleCategoryChange(event) {
     setSelectedCategory(event.target.value);
   }
 
-  const itemsToDisplay = items.filter((item) => {
+  const itemsToDisplay = itemsOne.filter((item) => {
     if (selectedCategory === "All") return true;
 
     return item.category === selectedCategory;
